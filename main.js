@@ -18,12 +18,19 @@ function getHumanChoice() {
     while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
         userChoice = prompt("Invalid input! Enter rock, paper, or scissors:").toLowerCase();
     }
-
     return userChoice
 }
 //Set starting scores using 'let' variable
 let humanScore = 0;
 let computerScore = 0;
+//Code for playing the game
+function playRound(humanChoice, computerChoice) {
+    //Ensure player's choice is lowercase
+    const lowercaseHumanChoice = humanChoice.toLowerCase();
 
-
+    //Determine who wins
+    if (lowercaseHumanChoice === computerChoice) {
+        console.log("It's a tie!")
+    }
+}
 //console.log to test
