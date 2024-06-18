@@ -2,9 +2,9 @@ function getComputerChoice() {
     //Generator choosing a number between 0 and 2
     const randomNumber = Math.floor(Math.random() * 3);
     //Return the computer choice based on the number generated
-    if (randomNumber < 1 / 3) {
+    if (randomNumber === 0) {
         return "rock";
-    } else if (randomNumber < 2 / 3) {
+    } else if (randomNumber === 1) {
         return "paper";
     } else {
         return "scissors";
@@ -13,7 +13,7 @@ function getComputerChoice() {
 //Create function for human choice
 function getHumanChoice() {
     //Code for returning human choice ensuring it's valid
-    let userChoice = prompt("Enter your choice (rock, paper, or scissors?):");
+    let userChoice = prompt("Enter your choice (rock, paper, or scissors?):").toLowerCase();
 
     while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
         userChoice = prompt("Invalid input! Enter rock, paper, or scissors:").toLowerCase();
@@ -22,11 +22,10 @@ function getHumanChoice() {
 }
 //Setting up the game
 function playGame() {
-
 //Set starting scores using 'let' variable
-let humanScore = 0;
-let computerScore = 0;
-//Code for playing the game
+    let humanScore = 0;
+    let computerScore = 0;
+    //Code for playing the game
     function playRound(humanChoice, computerChoice) {
     //Ensure player's choice is lowercase
     //Create variables for calculating choice against choice
@@ -62,4 +61,5 @@ let computerScore = 0;
         console.log("HOW DID YOU TIE?!?!")
     }
 }
+
 playGame();
