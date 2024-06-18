@@ -9,10 +9,16 @@ function getComputerChoice() {
     } else {
         return "scissors";
     }
-    console.log(getComputerChoice());
-    console.log(getComputerChoice());
-    console.log(getComputerChoice());
 }
 //Create function for human choice
-//Code for returning human choice ensuring it's valid
+function getHumanChoice() {
+    //Code for returning human choice ensuring it's valid
+    let userChoice = prompt("Enter your choice (rock, paper, or scissors?):");
+
+    while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors") {
+        userChoice = prompt("Invalid input! Enter rock, paper, or scissors:").toLowerCase();
+    }
+
+    return userChoice
+}
 //console.log to test
