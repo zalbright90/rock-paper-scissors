@@ -30,7 +30,7 @@ function playRound(humanChoice, computerChoice) {
 
     //Determine who wins
     if (lowercaseHumanChoice === computerChoice) {
-        console.log("It's a tie!")
+        console.log("It's a tie!");
     }
 }
 //console.log to test
