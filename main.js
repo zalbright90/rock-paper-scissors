@@ -27,10 +27,10 @@ function playGame() {
     let computerScore = 0;
     //Code for playing the game
     function playRound(humanChoice, computerChoice) {
-    //Ensure player's choice is lowercase
-    //Create variables for calculating choice against choice
+        //Ensure player's choice is lowercase
+        //Create variables for calculating choice against choice
         const lowercaseHumanChoice = humanChoice.toLowerCase();
-    //Determine who wins
+        //Determine who wins
         if (lowercaseHumanChoice === computerChoice) {
             console.log("It's a tie!");
         } else if (
