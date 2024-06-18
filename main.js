@@ -21,4 +21,9 @@ function getHumanChoice() {
 
     return userChoice
 }
+//Set starting scores using 'let' variable
+let humanScore = 0;
+let computerScore = 0;
+
+
 //console.log to test
