@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #000;
+    color: #00ff00;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #00ff00;
+    margin-bottom: 30px;
+}
+
+.game-area {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+button {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+button#firewall {
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+button#firewall:hover {
+    background-color: #fb1b1b;
+    color: #000;
+    box-shadow: 0 0 10px #fd0101;
+}
+
+button#virus {
+    border-color: #fff700;
+    color: #fff719;
+}
+
+button#virus:hover {
+    background-color: #fcff39;
+    color: #000;
+    box-shadow: 0 0 10px #fff719;
+}
+
+button#backdoor {
+    border-color: #ffffff;
+    color: #b2b2b2;
+}
+
+button#backdoor:hover {
+    background-color: #aaaaaa;
+    color: #000;
+    box-shadow: 0 0 10px #ffffff;
+}
+
+.matrix-text {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -20px;
+    width: 20px;
+    text-align: center;
+    animation: fall 20s infinite linear;
+}
+
+.matrix-character {
+    display: block;
+    font-size: 20px;
+    color: #00ff00;
+    opacity: 0;
+    animation: glow 1.5s infinite ease-in-out;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0; text-shadow: 0 0 5px #00ff00; }
+    50% { opacity: 1; text-shadow: 0 0 20px #00ff00; }
+}
