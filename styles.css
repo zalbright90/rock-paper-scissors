@@ -134,3 +134,9 @@ button#backdoor:hover {
     0%, 100% { opacity: 0; text-shadow: 0 0 5px #00ff00; }
     50% { opacity: 1; text-shadow: 0 0 20px #00ff00; }
 }
+
+@media (max-width: 768px) {
+    .matrix-column {
+        font-size: 0.8rem;
+    }
+}

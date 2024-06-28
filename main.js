@@ -52,16 +52,21 @@ document.querySelector('#firewall').addEventListener('click', () => playRound('f
 document.querySelector('#virus').addEventListener('click', () => playRound('virus'));
 document.querySelector('#backdoor').addEventListener('click', () => playRound('backdoor'));
 
-function createMatrixBackground() {
-    const matrixBg = document.getElementById('matrix-bg');
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+-=[]{}|;:,.<>?';
-    const columns = Math.floor(window.innerWidth / 20);
+const matrixBg = document.getElementById('matrix-bg');
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+-=[]{}|;:,.<>?';
 
-    for (let i = 0; i < columns; i++) {
+function createMatrixBackground() {
+    matrixBg.innerHTML = ''; // Clear existing content
+    const columnWidth = 20;
+    const columnCount = Math.ceil(window.innerWidth / columnWidth);
+
+    for (let i = 0; i < columnCount; i++) {
         const column = document.createElement('div');
         column.classList.add('matrix-column');
-        column.style.left = `${i * 20}px`;
-        let columnHeight = Math.floor(Math.random() * 20) + 20;
+        column.style.left = `${i * columnWidth}px`;
+        column.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random speed
+        
+        const columnHeight = Math.floor(Math.random() * 20) + 20;
         for (let j = 0; j < columnHeight; j++) {
             const char = document.createElement('span');
             char.classList.add('matrix-character');
@@ -72,17 +77,23 @@ function createMatrixBackground() {
     }
 }
 
-function animateMatrix() {
+function updateCharacters() {
     const columns = document.querySelectorAll('.matrix-column');
     columns.forEach(column => {
-        const chars = column.querySelectorAll('.matrix-character');
-        let topChar = chars[0];
-        column.removeChild(topChar);
-        column.appendChild(topChar);
-        topChar.textContent = String.fromCharCode(33 + Math.floor(Math.random() * 94));
+        if (Math.random() < 0.1) { // 10% chance to update a character
+            const chars = column.children;
+            const randomIndex = Math.floor(Math.random() * chars.length);
+            chars[randomIndex].textContent = characters[Math.floor(Math.random() * characters.length)];
+        }
     });
-    setTimeout(animateMatrix, 69);
+    requestAnimationFrame(updateCharacters);
 }
 
 createMatrixBackground();
-animateMatrix();
+updateCharacters();
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(createMatrixBackground, 250);
+});
