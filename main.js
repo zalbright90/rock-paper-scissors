@@ -81,7 +81,7 @@ function animateMatrix() {
         column.appendChild(topChar);
         topChar.textContent = String.fromCharCode(33 + Math.floor(Math.random() * 94));
     });
-    setTimeout(animateMatrix, 50);
+    setTimeout(animateMatrix, 69);
 }
 
 createMatrixBackground();
