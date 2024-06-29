@@ -14,18 +14,13 @@ The project aims to create a Rock Paper Scissors game that follows these steps:
 ### How to Play
 To play the game in the console, follow these steps:
 
-1. Open the HTML file in a web browser.
-2. Open the browser's developer console (usually by pressing F12 or right-clicking and selecting "Inspect").
-3. The game will prompt you to enter your choice (rock, paper, or scissors).
-4. Enter your choice in the console and press Enter.
-5. The game will display the results of the round and the updated scores.
-6. The game will continue for 5 rounds, and the overall winner will be declared at the end.
+- Click the link above
+- start playing!
 
 ### Future Improvements
 In the future, a graphical user interface (GUI) will be implemented to enhance the user experience and make the game more interactive. The GUI will likely include:
 
-* Buttons or clickable elements for the player to select their choice (rock, paper, or scissors).
+* Buttons or clickable elements for the player to select their choice firewall, virus, backdoor(rock, paper, or scissors).
 * Visual representation of the computer's choice and the round results.
 * Display of the current scores and the overall winner.
 
-The README file will be updated with instructions on how to interact with the GUI once it is implemented.
